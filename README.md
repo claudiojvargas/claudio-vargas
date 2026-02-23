@@ -9,10 +9,18 @@ Landing page profissional e minimalista para apresentar perfil, competências e 
 - JavaScript (Vanilla)
 - GitHub REST API
 
+## O que tem na versão 2
+
+- Visual com identidade azul reforçada
+- Modo escuro com alternância manual e persistência em `localStorage`
+- Cards com microinterações (hover)
+- Metadados dinâmicos dos repositórios (linguagem, estrelas e última atualização)
+- Botão **Acessar site ↗** automático para projetos que possuem link em `homepage` no repositório
+
 ## Estrutura
 
 - `index.html`: conteúdo principal da página com classes utilitárias do Tailwind
-- `script.js`: carregamento dinâmico de metadados dos repositórios via API do GitHub
+- `script.js`: carregamento dinâmico de metadados dos repositórios, links de site e controle de tema
 
 ## Executar localmente
 

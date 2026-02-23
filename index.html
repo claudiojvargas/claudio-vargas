@@ -17,6 +17,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
@@ -41,37 +42,49 @@
       };
     </script>
   </head>
-  <body class="bg-slate-50 text-slate-900 antialiased">
+  <body class="bg-gradient-to-b from-brand-50 via-slate-50 to-white text-slate-900 antialiased transition-colors dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 dark:text-slate-100">
     <header class="mx-auto grid w-[min(1080px,92vw)] gap-8 py-14 md:grid-cols-[1.6fr_1fr]" id="topo">
       <div>
-        <p class="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-600">
-          Disponível para oportunidades remotas e híbridas
-        </p>
-        <h1 class="text-4xl font-extrabold leading-tight text-slate-950 md:text-6xl">Claudio Vargas</h1>
-        <p class="mt-3 font-semibold text-brand-700">
+        <div class="mb-3 flex flex-wrap items-center gap-2">
+          <span class="rounded-full bg-brand-600 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-white">V2</span>
+          <p class="text-xs font-bold uppercase tracking-[0.16em] text-brand-700 dark:text-brand-300">
+            Disponível para oportunidades remotas e híbridas
+          </p>
+        </div>
+
+        <h1 class="text-4xl font-extrabold leading-tight text-slate-950 md:text-6xl dark:text-white">Claudio Vargas</h1>
+        <p class="mt-3 font-semibold text-brand-700 dark:text-brand-300">
           Desenvolvedor Full Stack · PHP · JavaScript · Node · MySQL
         </p>
-        <p class="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-slate-700">
+        <p class="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-slate-700 dark:text-slate-300">
           Construo sistemas web com código limpo, foco em escalabilidade e atenção ao impacto de
           negócio. +7 anos atuando em ERPs, plataformas EAD e aplicações de autoatendimento.
         </p>
+
         <div class="mt-7 flex flex-wrap gap-3">
           <a
-            class="rounded-xl bg-brand-700 px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-brand-800"
+            class="rounded-xl bg-brand-700 px-5 py-3 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800"
             href="#projetos"
             >Ver projetos em destaque</a
           >
           <a
-            class="rounded-xl border border-brand-200 bg-white px-5 py-3 font-semibold text-brand-700 transition hover:border-brand-300 hover:bg-brand-50"
+            class="rounded-xl border border-brand-200 bg-white px-5 py-3 font-semibold text-brand-700 transition hover:border-brand-300 hover:bg-brand-50 dark:border-slate-700 dark:bg-slate-900 dark:text-brand-300 dark:hover:bg-slate-800"
             href="mailto:claudiojcvargas@gmail.com"
             >Entrar em contato</a
           >
+          <button
+            id="theme-toggle"
+            type="button"
+            class="rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-50 dark:border-slate-700 dark:bg-slate-900 dark:text-brand-300 dark:hover:bg-slate-800"
+          >
+            Alternar tema
+          </button>
         </div>
       </div>
 
-      <aside class="h-fit rounded-2xl border border-brand-100 bg-white p-6 shadow-sm" aria-label="Resumo profissional">
-        <h2 class="text-lg font-bold text-slate-900">Resumo rápido</h2>
-        <ul class="mt-4 space-y-2 text-sm text-slate-700">
+      <aside class="h-fit rounded-2xl border border-brand-100 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900" aria-label="Resumo profissional">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white">Resumo rápido</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
           <li>📍 Rio Grande do Sul, Brasil</li>
           <li>📞 +55 51 99887-3913</li>
           <li>✉️ claudiojcvargas@gmail.com</li>
@@ -83,83 +96,77 @@
 
     <main class="mx-auto w-[min(1080px,92vw)]">
       <section class="py-5" id="competencias">
-        <h2 class="text-2xl font-bold text-slate-950">Competências</h2>
+        <h2 class="text-2xl font-bold text-slate-950 dark:text-white">Competências</h2>
         <div class="mt-4 flex flex-wrap gap-2.5">
-          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">PHP</span>
-          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">JavaScript</span>
-          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Node.js</span>
-          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">MySQL</span>
-          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Git & GitHub</span>
-          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Clean Architecture</span>
-          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">SOLID</span>
-          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Microsserviços</span>
-          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Metodologias Ágeis</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">PHP</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">JavaScript</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Node.js</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">MySQL</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Git & GitHub</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Clean Architecture</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">SOLID</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Microsserviços</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Metodologias Ágeis</span>
         </div>
       </section>
 
       <section class="py-7" id="projetos">
         <div class="mb-5">
-          <h2 class="text-2xl font-bold text-slate-950">Projetos em destaque</h2>
-          <p class="mt-1 text-slate-600">Repositórios selecionados para demonstrar resolução de problemas reais.</p>
+          <h2 class="text-2xl font-bold text-slate-950 dark:text-white">Projetos em destaque</h2>
+          <p class="mt-1 text-slate-600 dark:text-slate-300">Repositórios selecionados para demonstrar resolução de problemas reais.</p>
         </div>
 
         <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" id="projects-grid">
           <article
-            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm"
+            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900"
             data-repo="claudiojvargas/calculadora-preco-mercado"
+            data-github-url="https://github.com/claudiojvargas/calculadora-preco-mercado"
           >
-            <div class="flex min-h-[250px] flex-col">
-              <h3 class="text-lg font-bold text-slate-900">Calculadora Preço Mercado</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            <div class="flex min-h-[270px] flex-col">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Calculadora Preço Mercado</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 Ferramenta para apoio em decisões de precificação, com foco em clareza de cálculos e produtividade no dia a dia comercial.
               </p>
-              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs"><span class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800">Carregando…</span></div>
-              <a
-                class="mt-auto pt-5 text-sm font-bold text-brand-700 hover:text-brand-900"
-                href="https://github.com/claudiojvargas/calculadora-preco-mercado"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Ver no GitHub ↗</a
-              >
-            </div>
-          </article>
-
-          <article class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm" data-repo="claudiojvargas/cardgame">
-            <div class="flex min-h-[250px] flex-col">
-              <h3 class="text-lg font-bold text-slate-900">Cardgame</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">
-                Projeto de jogo de cartas para praticar arquitetura de código, regras de negócio e experiência de uso em interface interativa.
-              </p>
-              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs"><span class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800">Carregando…</span></div>
-              <a class="mt-auto pt-5 text-sm font-bold text-brand-700 hover:text-brand-900" href="https://github.com/claudiojvargas/cardgame" target="_blank" rel="noopener noreferrer">Ver no GitHub ↗</a>
+              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs"><span class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800 dark:border-slate-700 dark:bg-slate-800 dark:text-brand-200">Carregando…</span></div>
+              <div class="project-links mt-auto flex flex-wrap gap-2 pt-5"></div>
             </div>
           </article>
 
           <article
-            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm"
-            data-repo="claudiojvargas/painel-de-autoatendimento"
+            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900"
+            data-repo="claudiojvargas/cardgame"
+            data-github-url="https://github.com/claudiojvargas/cardgame"
           >
-            <div class="flex min-h-[250px] flex-col">
-              <h3 class="text-lg font-bold text-slate-900">Painel de Autoatendimento</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            <div class="flex min-h-[270px] flex-col">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Cardgame</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                Projeto de jogo de cartas para praticar arquitetura de código, regras de negócio e experiência de uso em interface interativa.
+              </p>
+              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs"><span class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800 dark:border-slate-700 dark:bg-slate-800 dark:text-brand-200">Carregando…</span></div>
+              <div class="project-links mt-auto flex flex-wrap gap-2 pt-5"></div>
+            </div>
+          </article>
+
+          <article
+            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900"
+            data-repo="claudiojvargas/painel-de-autoatendimento"
+            data-github-url="https://github.com/claudiojvargas/painel-de-autoatendimento"
+          >
+            <div class="flex min-h-[270px] flex-col">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Painel de Autoatendimento</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 Solução orientada à experiência de atendimento com visão de fluxo, filas e operação, simulando cenários comuns de negócio.
               </p>
-              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs"><span class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800">Carregando…</span></div>
-              <a
-                class="mt-auto pt-5 text-sm font-bold text-brand-700 hover:text-brand-900"
-                href="https://github.com/claudiojvargas/painel-de-autoatendimento"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Ver no GitHub ↗</a
-              >
+              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs"><span class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800 dark:border-slate-700 dark:bg-slate-800 dark:text-brand-200">Carregando…</span></div>
+              <div class="project-links mt-auto flex flex-wrap gap-2 pt-5"></div>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-brand-100 p-6" id="ideias">
-        <h2 class="text-2xl font-bold text-slate-950">Ideias para elevar seu portfólio</h2>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-700">
+      <section class="rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-brand-100 p-6 dark:border-slate-700 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800" id="ideias">
+        <h2 class="text-2xl font-bold text-slate-950 dark:text-white">Ideias para elevar seu portfólio</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-700 dark:text-slate-300">
           <li><strong>Seção “Como penso”:</strong> explique em 3 passos como você estrutura um projeto (diagnóstico, arquitetura, entrega iterativa).</li>
           <li><strong>Métricas por projeto:</strong> inclua resultados como redução de tempo, melhoria de performance ou impacto em usuários.</li>
           <li><strong>Mini estudos de caso:</strong> para cada repositório, descreva problema, decisão técnica e resultado.</li>
@@ -169,9 +176,9 @@
       </section>
     </main>
 
-    <footer class="mx-auto mt-8 flex w-[min(1080px,92vw)] flex-col gap-2 border-t border-brand-100 py-6 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
+    <footer class="mx-auto mt-8 flex w-[min(1080px,92vw)] flex-col gap-2 border-t border-brand-100 py-6 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300 md:flex-row md:items-center md:justify-between">
       <p>© <span id="year"></span> Claudio Vargas · Desenvolvedor Full Stack</p>
-      <a class="font-semibold text-brand-700 hover:text-brand-900" href="#topo">Voltar ao topo ↑</a>
+      <a class="font-semibold text-brand-700 hover:text-brand-900 dark:text-brand-300 dark:hover:text-brand-200" href="#topo">Voltar ao topo ↑</a>
     </footer>
 
     <script src="script.js"></script>
