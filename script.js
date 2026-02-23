@@ -70,6 +70,8 @@ async function loadRepoMeta() {
 }
 
 function applyTheme(theme) {
+  updateThemeToggleLabel(theme);
+
   const root = document.documentElement;
 
   if (theme === 'dark') {
@@ -77,6 +79,13 @@ function applyTheme(theme) {
   } else {
     root.classList.remove('dark');
   }
+}
+
+function updateThemeToggleLabel(theme) {
+  if (!themeToggle) return;
+
+  const nextTheme = theme === 'dark' ? 'white' : 'dark';
+  themeToggle.textContent = `Mudar para tema ${nextTheme}`;
 }
 
 function initTheme() {
