@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Claudio Vargas | Desenvolvedor Full Stack</title>
+    <meta
+      name="description"
+      content="Portfólio profissional e minimalista de Claudio Vargas, Desenvolvedor Full Stack com foco em PHP, JavaScript e Node."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Canonical (troque quando tiver domínio) -->
+    <link rel="canonical" href="https://SEU_DOMINIO_AQUI/" />
+
+    <!-- Open Graph (compartilhamento WhatsApp/LinkedIn) -->
+    <meta property="og:title" content="Claudio Vargas | Desenvolvedor Full Stack" />
+    <meta
+      property="og:description"
+      content="Portfólio profissional e minimalista com projetos em PHP, JavaScript, Node e MySQL."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://SEU_DOMINIO_AQUI/" />
+    <meta property="og:image" content="https://SEU_DOMINIO_AQUI/assets/og-image.png" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Claudio Vargas | Desenvolvedor Full Stack" />
+    <meta
+      name="twitter:description"
+      content="Portfólio profissional e minimalista com projetos em PHP, JavaScript, Node e MySQL."
+    />
+    <meta name="twitter:image" content="https://SEU_DOMINIO_AQUI/assets/og-image.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+  </head>
+
+  <body
+    class="bg-gradient-to-b from-brand-50 via-slate-50 to-white text-slate-900 antialiased transition-colors dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 dark:text-slate-100"
+  >
+    <!-- Skip link (A11y) -->
+    <a
+      href="#conteudo"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:shadow-lg dark:focus:bg-slate-900 dark:focus:text-white"
+    >
+      Pular para o conteúdo
+    </a>
+
+    <header class="mx-auto grid w-[min(1080px,92vw)] gap-8 py-14 md:grid-cols-[1.6fr_1fr]" id="topo">
+      <div>
+        <div class="mb-3 flex flex-wrap items-center gap-2">
+          <span class="rounded-full bg-brand-600 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-white">
+            V2
+          </span>
+          <p class="text-xs font-bold uppercase tracking-[0.16em] text-brand-700 dark:text-brand-300">
+            Disponível para oportunidades remotas e híbridas
+          </p>
+        </div>
+
+        <h1 class="text-4xl font-extrabold leading-tight text-slate-950 md:text-6xl dark:text-white">
+          Claudio Vargas
+        </h1>
+        <p class="mt-3 font-semibold text-brand-700 dark:text-brand-300">
+          Desenvolvedor Full Stack · PHP · JavaScript · Node · MySQL
+        </p>
+        <p class="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-slate-700 dark:text-slate-300">
+          Construo sistemas web com código limpo, foco em escalabilidade e atenção ao impacto de negócio. 7+ anos atuando
+          em ERPs, plataformas EAD e aplicações de autoatendimento.
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a
+            class="rounded-xl bg-brand-700 px-5 py-3 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-400"
+            href="#projetos"
+          >
+            Ver projetos em destaque
+          </a>
+
+          <a
+            class="rounded-xl border border-brand-200 bg-white px-5 py-3 font-semibold text-brand-700 transition hover:border-brand-300 hover:bg-brand-50 focus:outline-none focus:ring-2 focus:ring-brand-300 dark:border-slate-700 dark:bg-slate-900 dark:text-brand-300 dark:hover:bg-slate-800"
+            href="mailto:claudiojcvargas@gmail.com"
+          >
+            Entrar em contato
+          </a>
+
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-pressed="false"
+            class="rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-50 focus:outline-none focus:ring-2 focus:ring-brand-300 dark:border-slate-700 dark:bg-slate-900 dark:text-brand-300 dark:hover:bg-slate-800"
+          >
+            Ativar tema escuro
+          </button>
+        </div>
+      </div>
+
+      <aside
+        class="h-fit rounded-2xl border border-brand-100 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+        aria-label="Resumo profissional"
+      >
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white">Resumo rápido</h2>
+
+        <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li>📍 Rio Grande do Sul, Brasil</li>
+
+          <li>
+            📞
+            <a
+              class="font-semibold text-brand-700 hover:text-brand-900 dark:text-brand-300 dark:hover:text-brand-200"
+              href="tel:+5551998873913"
+            >
+              +55 51 99887-3913
+            </a>
+            <span class="text-slate-400 dark:text-slate-500">·</span>
+            <a
+              class="font-semibold text-brand-700 hover:text-brand-900 dark:text-brand-300 dark:hover:text-brand-200"
+              href="https://wa.me/5551998873913"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir conversa no WhatsApp"
+            >
+              WhatsApp
+            </a>
+          </li>
+
+          <li>
+            ✉️
+            <a
+              class="font-semibold text-brand-700 hover:text-brand-900 dark:text-brand-300 dark:hover:text-brand-200"
+              href="mailto:claudiojcvargas@gmail.com"
+            >
+              claudiojcvargas@gmail.com
+            </a>
+          </li>
+
+          <li>
+            🌐
+            <a
+              class="font-semibold text-brand-700 hover:text-brand-900 dark:text-brand-300 dark:hover:text-brand-200"
+              href="https://github.com/claudiojvargas"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github.com/claudiojvargas
+            </a>
+          </li>
+
+          <li>
+            💼
+            <a
+              class="font-semibold text-brand-700 hover:text-brand-900 dark:text-brand-300 dark:hover:text-brand-200"
+              href="https://www.linkedin.com/in/claudiojvargas"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin.com/in/claudiojvargas
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </header>
+
+    <main class="mx-auto w-[min(1080px,92vw)]" id="conteudo">
+      <section class="py-5" id="competencias" aria-labelledby="titulo-competencias">
+        <h2 class="text-2xl font-bold text-slate-950 dark:text-white" id="titulo-competencias">Competências</h2>
+
+        <div class="mt-4 flex flex-wrap gap-2.5">
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">PHP</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">JavaScript</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Node.js</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">MySQL</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Git & GitHub</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Clean Architecture</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">SOLID</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Microsserviços</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800 dark:bg-brand-900/50 dark:text-brand-200">Metodologias Ágeis</span>
+        </div>
+      </section>
+
+      <section class="py-7" id="projetos" aria-labelledby="titulo-projetos">
+        <div class="mb-5">
+          <h2 class="text-2xl font-bold text-slate-950 dark:text-white" id="titulo-projetos">Projetos em destaque</h2>
+          <p class="mt-1 text-slate-600 dark:text-slate-300">
+            Repositórios selecionados para demonstrar resolução de problemas reais.
+          </p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" id="projects-grid">
+          <article
+            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900"
+            data-repo="claudiojvargas/calculadora-preco-mercado"
+            data-github-url="https://github.com/claudiojvargas/calculadora-preco-mercado"
+            data-site-url="https://precomercado.netlify.app"
+          >
+            <div class="flex min-h-[270px] flex-col">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Calculadora Preço Mercado</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                Ferramenta para apoio em decisões de precificação, com foco em clareza de cálculos e produtividade no dia a dia comercial.
+              </p>
+              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs">
+                <span
+                  class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800 dark:border-slate-700 dark:bg-slate-800 dark:text-brand-200"
+                >
+                  Carregando…
+                </span>
+              </div>
+              <div class="project-links mt-auto flex flex-wrap gap-2 pt-5"></div>
+            </div>
+          </article>
+
+          <article
+            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900"
+            data-repo="claudiojvargas/cardgame"
+            data-github-url="https://github.com/claudiojvargas/cardgame"
+            data-site-url="https://mithocard.netlify.app"
+          >
+            <div class="flex min-h-[270px] flex-col">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Cardgame</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                Projeto de jogo de cartas para praticar arquitetura de código, regras de negócio e experiência de uso em interface interativa.
+              </p>
+              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs">
+                <span
+                  class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800 dark:border-slate-700 dark:bg-slate-800 dark:text-brand-200"
+                >
+                  Carregando…
+                </span>
+              </div>
+              <div class="project-links mt-auto flex flex-wrap gap-2 pt-5"></div>
+            </div>
+          </article>
+
+          <article
+            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-700 dark:bg-slate-900"
+            data-repo="claudiojvargas/painel-de-autoatendimento"
+            data-github-url="https://github.com/claudiojvargas/painel-de-autoatendimento"
+            data-site-url="https://painelhabitos.netlify.app"
+          >
+            <div class="flex min-h-[270px] flex-col">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Painel de Autoatendimento</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                Solução orientada à experiência de atendimento com visão de fluxo, filas e operação, simulando cenários comuns de negócio.
+              </p>
+              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs">
+                <span
+                  class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800 dark:border-slate-700 dark:bg-slate-800 dark:text-brand-200"
+                >
+                  Carregando…
+                </span>
+              </div>
+              <div class="project-links mt-auto flex flex-wrap gap-2 pt-5"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-brand-100 p-6 dark:border-slate-700 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800"
+        id="ideias"
+        aria-labelledby="titulo-ideias"
+      >
+        <h2 class="text-2xl font-bold text-slate-950 dark:text-white" id="titulo-ideias">
+          Ideias para elevar seu portfólio
+        </h2>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-700 dark:text-slate-300">
+          <li><strong>Seção “Como penso”:</strong> explique em 3 passos como você estrutura um projeto (diagnóstico, arquitetura, entrega iterativa).</li>
+          <li><strong>Métricas por projeto:</strong> inclua resultados como redução de tempo, melhoria de performance ou impacto em usuários.</li>
+          <li><strong>Mini estudos de caso:</strong> para cada repositório, descreva problema, decisão técnica e resultado.</li>
+          <li><strong>Prova social:</strong> destaque certificações, recomendações ou clientes atendidos (quando permitido).</li>
+          <li><strong>Call to action claro:</strong> mantenha botão de contato sempre visível para converter visitas em conversas.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="mx-auto mt-8 flex w-[min(1080px,92vw)] flex-col gap-2 border-t border-brand-100 py-6 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300 md:flex-row md:items-center md:justify-between">
+      <p>© <span id="year"></span> Claudio Vargas · Desenvolvedor Full Stack</p>
+      <a class="font-semibold text-brand-700 hover:text-brand-900 dark:text-brand-300 dark:hover:text-brand-200" href="#topo">
+        Voltar ao topo ↑
+      </a>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="script.js" defer></script>
+
+    <!-- Base: ano + tema (funciona mesmo sem nada no script.js) -->
+    <script>
+      // Ano no rodapé
+      (function () {
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+      })();
+
+      // Toggle de tema com persistência + a11y
+      (function () {
+        const btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+
+        const setUI = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          btn.setAttribute('aria-pressed', String(isDark));
+          btn.textContent = isDark ? 'Ativar tema claro' : 'Ativar tema escuro';
+        };
+
+        setUI();
+
+        btn.addEventListener('click', () => {
+          const isDarkNow = document.documentElement.classList.toggle('dark');
+          try {
+            localStorage.setItem('theme', isDarkNow ? 'dark' : 'light');
+          } catch (e) {}
+          setUI();
+        });
+      })();
+    </script>
+  </body>
+</html>
