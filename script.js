@@ -8,7 +8,7 @@ const githubButtonClass =
 const siteButtonClass =
   'rounded-lg bg-brand-700 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-brand-800';
 
-function createProjectLinks(card, homepageUrl) {
+function createProjectLinks(card, siteUrl) {
   const linksContainer = card.querySelector('.project-links');
   const githubUrl = card.dataset.githubUrl;
 
@@ -21,11 +21,11 @@ function createProjectLinks(card, homepageUrl) {
     >Ver no GitHub ↗</a>
   `;
 
-  const siteButton = homepageUrl
+  const siteButton = siteUrl
     ? `
       <a
         class="${siteButtonClass}"
-        href="${homepageUrl}"
+        href="${siteUrl}"
         target="_blank"
         rel="noopener noreferrer"
       >Acessar site ↗</a>
@@ -52,7 +52,9 @@ async function loadRepoMeta() {
         const language = data.language || 'N/A';
         const stars = data.stargazers_count ?? 0;
         const updatedAt = new Date(data.updated_at).toLocaleDateString('pt-BR');
-        const homepageUrl = data.homepage && data.homepage.trim() ? data.homepage.trim() : '';
+        const fallbackHomepage = data.homepage && data.homepage.trim() ? data.homepage.trim() : '';
+        const manualSiteUrl = card.dataset.siteUrl ? card.dataset.siteUrl.trim() : '';
+        const siteUrl = manualSiteUrl || fallbackHomepage;
 
         metaContainer.innerHTML = `
           <span class="${chipClass}">${language}</span>
@@ -60,10 +62,11 @@ async function loadRepoMeta() {
           <span class="${chipClass}">Atualizado em ${updatedAt}</span>
         `;
 
-        createProjectLinks(card, homepageUrl);
+        createProjectLinks(card, siteUrl);
       } catch (error) {
+        const manualSiteUrl = card.dataset.siteUrl ? card.dataset.siteUrl.trim() : '';
         metaContainer.innerHTML = `<span class="${chipClass}">Metadados indisponíveis no momento</span>`;
-        createProjectLinks(card, '');
+        createProjectLinks(card, manualSiteUrl);
       }
     })
   );
