@@ -6,6 +6,19 @@ const chipClass = 'chip';
 const githubButtonClass = 'btn-gh';
 const siteButtonClass = 'btn-site';
 
+const token = (import.meta.env.VITE_GITHUB_TOKEN || '').trim();
+
+fetch('https://api.github.com/users/claudiojvargas', {
+  headers: token ? { Authorization: `Bearer ${token}` } : {}
+})
+  .then(async (res) => {
+    const data = await res.json();
+    if (!res.ok) throw new Error(data?.message || `HTTP ${res.status}`);
+    return data;
+  })
+  .then(console.log)
+  .catch(console.error);
+
 function safeTrim(value) {
   return typeof value === 'string' ? value.trim() : '';
 }
