@@ -2,12 +2,9 @@
 const projects = Array.from(document.querySelectorAll('.project-card'));
 const themeToggle = document.getElementById('theme-toggle');
 
-const chipClass =
-  'rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800 dark:border-slate-700 dark:bg-slate-800 dark:text-brand-200';
-const githubButtonClass =
-  'rounded-lg border border-brand-200 bg-white px-3 py-1.5 text-sm font-semibold text-brand-700 transition hover:bg-brand-50 dark:border-slate-700 dark:bg-slate-900 dark:text-brand-300 dark:hover:bg-slate-800';
-const siteButtonClass =
-  'rounded-lg bg-brand-700 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-brand-800';
+const chipClass = 'chip';
+const githubButtonClass = 'btn-gh';
+const siteButtonClass = 'btn-site';
 
 function safeTrim(value) {
   return typeof value === 'string' ? value.trim() : '';

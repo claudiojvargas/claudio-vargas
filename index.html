@@ -293,37 +293,6 @@
     </footer>
 
     <!-- Script principal -->
-    <script src="script.js" defer></script>
-
-    <!-- Base: ano + tema (funciona mesmo sem nada no script.js) -->
-    <script>
-      // Ano no rodapé
-      (function () {
-        const yearEl = document.getElementById('year');
-        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-      })();
-
-      // Toggle de tema com persistência + a11y
-      (function () {
-        const btn = document.getElementById('theme-toggle');
-        if (!btn) return;
-
-        const setUI = () => {
-          const isDark = document.documentElement.classList.contains('dark');
-          btn.setAttribute('aria-pressed', String(isDark));
-          btn.textContent = isDark ? 'Ativar tema claro' : 'Ativar tema escuro';
-        };
-
-        setUI();
-
-        btn.addEventListener('click', () => {
-          const isDarkNow = document.documentElement.classList.toggle('dark');
-          try {
-            localStorage.setItem('theme', isDarkNow ? 'dark' : 'light');
-          } catch (e) {}
-          setUI();
-        });
-      })();
-    </script>
+    <script type="module" src="assets/js/script.js"></script>
   </body>
 </html>
