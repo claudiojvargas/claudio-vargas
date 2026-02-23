@@ -14,27 +14,64 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+              },
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <header class="hero" id="topo">
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <header class="mx-auto grid w-[min(1080px,92vw)] gap-8 py-14 md:grid-cols-[1.6fr_1fr]" id="topo">
       <div>
-        <p class="eyebrow">Disponível para oportunidades remotas e híbridas</p>
-        <h1>Claudio Vargas</h1>
-        <p class="subtitle">Desenvolvedor Full Stack · PHP · JavaScript · Node · MySQL</p>
-        <p class="intro">
-          Construo sistemas web com código limpo, foco em escalabilidade e atenção ao
-          impacto de negócio. +7 anos atuando em ERPs, plataformas EAD e aplicações
-          de autoatendimento.
+        <p class="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-600">
+          Disponível para oportunidades remotas e híbridas
         </p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#projetos">Ver projetos em destaque</a>
-          <a class="btn btn-secondary" href="mailto:claudiojcvargas@gmail.com">Entrar em contato</a>
+        <h1 class="text-4xl font-extrabold leading-tight text-slate-950 md:text-6xl">Claudio Vargas</h1>
+        <p class="mt-3 font-semibold text-brand-700">
+          Desenvolvedor Full Stack · PHP · JavaScript · Node · MySQL
+        </p>
+        <p class="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-slate-700">
+          Construo sistemas web com código limpo, foco em escalabilidade e atenção ao impacto de
+          negócio. +7 anos atuando em ERPs, plataformas EAD e aplicações de autoatendimento.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a
+            class="rounded-xl bg-brand-700 px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-brand-800"
+            href="#projetos"
+            >Ver projetos em destaque</a
+          >
+          <a
+            class="rounded-xl border border-brand-200 bg-white px-5 py-3 font-semibold text-brand-700 transition hover:border-brand-300 hover:bg-brand-50"
+            href="mailto:claudiojcvargas@gmail.com"
+            >Entrar em contato</a
+          >
         </div>
       </div>
-      <aside class="hero-card" aria-label="Resumo profissional">
-        <h2>Resumo rápido</h2>
-        <ul>
+
+      <aside class="h-fit rounded-2xl border border-brand-100 bg-white p-6 shadow-sm" aria-label="Resumo profissional">
+        <h2 class="text-lg font-bold text-slate-900">Resumo rápido</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700">
           <li>📍 Rio Grande do Sul, Brasil</li>
           <li>📞 +55 51 99887-3913</li>
           <li>✉️ claudiojcvargas@gmail.com</li>
@@ -44,90 +81,97 @@
       </aside>
     </header>
 
-    <main>
-      <section class="section" id="competencias">
-        <h2>Competências</h2>
-        <div class="tags">
-          <span>PHP</span>
-          <span>JavaScript</span>
-          <span>Node.js</span>
-          <span>MySQL</span>
-          <span>Git & GitHub</span>
-          <span>Clean Architecture</span>
-          <span>SOLID</span>
-          <span>Microsserviços</span>
-          <span>Metodologias Ágeis</span>
+    <main class="mx-auto w-[min(1080px,92vw)]">
+      <section class="py-5" id="competencias">
+        <h2 class="text-2xl font-bold text-slate-950">Competências</h2>
+        <div class="mt-4 flex flex-wrap gap-2.5">
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">PHP</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">JavaScript</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Node.js</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">MySQL</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Git & GitHub</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Clean Architecture</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">SOLID</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Microsserviços</span>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-800">Metodologias Ágeis</span>
         </div>
       </section>
 
-      <section class="section" id="projetos">
-        <div class="section-header">
-          <h2>Projetos em destaque</h2>
-          <p>Repositórios selecionados para demonstrar resolução de problemas reais.</p>
+      <section class="py-7" id="projetos">
+        <div class="mb-5">
+          <h2 class="text-2xl font-bold text-slate-950">Projetos em destaque</h2>
+          <p class="mt-1 text-slate-600">Repositórios selecionados para demonstrar resolução de problemas reais.</p>
         </div>
-        <div class="projects-grid" id="projects-grid">
-          <article class="project-card" data-repo="claudiojvargas/calculadora-preco-mercado">
-            <h3>Calculadora Preço Mercado</h3>
-            <p>
-              Ferramenta para apoio em decisões de precificação, com foco em clareza de
-              cálculos e produtividade no dia a dia comercial.
-            </p>
-            <div class="project-meta"><span class="language">Carregando…</span></div>
-            <a href="https://github.com/claudiojvargas/calculadora-preco-mercado" target="_blank" rel="noopener noreferrer">Ver no GitHub ↗</a>
+
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" id="projects-grid">
+          <article
+            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm"
+            data-repo="claudiojvargas/calculadora-preco-mercado"
+          >
+            <div class="flex min-h-[250px] flex-col">
+              <h3 class="text-lg font-bold text-slate-900">Calculadora Preço Mercado</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                Ferramenta para apoio em decisões de precificação, com foco em clareza de cálculos e produtividade no dia a dia comercial.
+              </p>
+              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs"><span class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800">Carregando…</span></div>
+              <a
+                class="mt-auto pt-5 text-sm font-bold text-brand-700 hover:text-brand-900"
+                href="https://github.com/claudiojvargas/calculadora-preco-mercado"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ver no GitHub ↗</a
+              >
+            </div>
           </article>
 
-          <article class="project-card" data-repo="claudiojvargas/cardgame">
-            <h3>Cardgame</h3>
-            <p>
-              Projeto de jogo de cartas para praticar arquitetura de código, regras de negócio
-              e experiência de uso em interface interativa.
-            </p>
-            <div class="project-meta"><span class="language">Carregando…</span></div>
-            <a href="https://github.com/claudiojvargas/cardgame" target="_blank" rel="noopener noreferrer">Ver no GitHub ↗</a>
+          <article class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm" data-repo="claudiojvargas/cardgame">
+            <div class="flex min-h-[250px] flex-col">
+              <h3 class="text-lg font-bold text-slate-900">Cardgame</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                Projeto de jogo de cartas para praticar arquitetura de código, regras de negócio e experiência de uso em interface interativa.
+              </p>
+              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs"><span class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800">Carregando…</span></div>
+              <a class="mt-auto pt-5 text-sm font-bold text-brand-700 hover:text-brand-900" href="https://github.com/claudiojvargas/cardgame" target="_blank" rel="noopener noreferrer">Ver no GitHub ↗</a>
+            </div>
           </article>
 
-          <article class="project-card" data-repo="claudiojvargas/painel-de-autoatendimento">
-            <h3>Painel de Autoatendimento</h3>
-            <p>
-              Solução orientada à experiência de atendimento com visão de fluxo, filas e
-              operação, simulando cenários comuns de negócio.
-            </p>
-            <div class="project-meta"><span class="language">Carregando…</span></div>
-            <a href="https://github.com/claudiojvargas/painel-de-autoatendimento" target="_blank" rel="noopener noreferrer">Ver no GitHub ↗</a>
+          <article
+            class="project-card flex rounded-2xl border border-brand-100 bg-white p-5 shadow-sm"
+            data-repo="claudiojvargas/painel-de-autoatendimento"
+          >
+            <div class="flex min-h-[250px] flex-col">
+              <h3 class="text-lg font-bold text-slate-900">Painel de Autoatendimento</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                Solução orientada à experiência de atendimento com visão de fluxo, filas e operação, simulando cenários comuns de negócio.
+              </p>
+              <div class="project-meta mt-4 flex flex-wrap gap-2 text-xs"><span class="language rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800">Carregando…</span></div>
+              <a
+                class="mt-auto pt-5 text-sm font-bold text-brand-700 hover:text-brand-900"
+                href="https://github.com/claudiojvargas/painel-de-autoatendimento"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ver no GitHub ↗</a
+              >
+            </div>
           </article>
         </div>
       </section>
 
-      <section class="section ideas" id="ideias">
-        <h2>Ideias para elevar seu portfólio</h2>
-        <ul>
-          <li>
-            <strong>Seção “Como penso”:</strong> explique em 3 passos como você estrutura um
-            projeto (diagnóstico, arquitetura, entrega iterativa).
-          </li>
-          <li>
-            <strong>Métricas por projeto:</strong> inclua resultados como redução de tempo,
-            melhoria de performance ou impacto em usuários.
-          </li>
-          <li>
-            <strong>Mini estudos de caso:</strong> para cada repositório, descreva problema,
-            decisão técnica e resultado.
-          </li>
-          <li>
-            <strong>Prova social:</strong> destaque certificações, recomendações ou clientes
-            atendidos (quando permitido).
-          </li>
-          <li>
-            <strong>Call to action claro:</strong> mantenha botão de contato sempre visível para
-            converter visitas em conversas.
-          </li>
+      <section class="rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-brand-100 p-6" id="ideias">
+        <h2 class="text-2xl font-bold text-slate-950">Ideias para elevar seu portfólio</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-700">
+          <li><strong>Seção “Como penso”:</strong> explique em 3 passos como você estrutura um projeto (diagnóstico, arquitetura, entrega iterativa).</li>
+          <li><strong>Métricas por projeto:</strong> inclua resultados como redução de tempo, melhoria de performance ou impacto em usuários.</li>
+          <li><strong>Mini estudos de caso:</strong> para cada repositório, descreva problema, decisão técnica e resultado.</li>
+          <li><strong>Prova social:</strong> destaque certificações, recomendações ou clientes atendidos (quando permitido).</li>
+          <li><strong>Call to action claro:</strong> mantenha botão de contato sempre visível para converter visitas em conversas.</li>
         </ul>
       </section>
     </main>
 
-    <footer>
+    <footer class="mx-auto mt-8 flex w-[min(1080px,92vw)] flex-col gap-2 border-t border-brand-100 py-6 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
       <p>© <span id="year"></span> Claudio Vargas · Desenvolvedor Full Stack</p>
-      <a href="#topo">Voltar ao topo ↑</a>
+      <a class="font-semibold text-brand-700 hover:text-brand-900" href="#topo">Voltar ao topo ↑</a>
     </footer>
 
     <script src="script.js"></script>

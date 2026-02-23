@@ -1,5 +1,8 @@
 const projects = Array.from(document.querySelectorAll('.project-card'));
 
+const chipClass =
+  'rounded-lg border border-brand-200 bg-brand-50 px-2.5 py-1 font-medium text-brand-800';
+
 async function loadRepoMeta() {
   await Promise.all(
     projects.map(async (card) => {
@@ -19,12 +22,12 @@ async function loadRepoMeta() {
         const updatedAt = new Date(data.updated_at).toLocaleDateString('pt-BR');
 
         metaContainer.innerHTML = `
-          <span class="language">${language}</span>
-          <span class="stars">⭐ ${stars}</span>
-          <span class="updated">Atualizado em ${updatedAt}</span>
+          <span class="${chipClass}">${language}</span>
+          <span class="${chipClass}">⭐ ${stars}</span>
+          <span class="${chipClass}">Atualizado em ${updatedAt}</span>
         `;
       } catch (error) {
-        metaContainer.innerHTML = '<span class="language">Metadados indisponíveis no momento</span>';
+        metaContainer.innerHTML = `<span class="${chipClass}">Metadados indisponíveis no momento</span>`;
       }
     })
   );
