@@ -2,7 +2,6 @@
 const projects = Array.from(document.querySelectorAll('.project-card'));
 const themeToggle = document.getElementById('theme-toggle');
 
-const chipClass = 'chip';
 const githubButtonClass = 'btn-gh';
 const siteButtonClass = 'btn-site';
 
@@ -90,46 +89,8 @@ async function loadRepoMeta() {
 
   await Promise.all(
     projects.map(async (card) => {
-      const repo = safeTrim(card.dataset.repo);
-      const metaContainer = card.querySelector('.project-meta');
-
-      if (!repo || !metaContainer) return;
-
       const manualSiteUrl = safeTrim(card.dataset.siteUrl);
-
-      try {
-        const response = await fetchWithTimeout(`https://api.github.com/repos/${repo}`, {
-          timeoutMs: 6000,
-        });
-
-        // Rate limit / bloqueio / etc.
-        if (!response.ok) {
-          throw new Error(`GitHub HTTP ${response.status} para ${repo}`);
-        }
-
-        const data = await response.json();
-
-        const language = data.language || 'N/A';
-        const stars = Number.isFinite(data.stargazers_count) ? data.stargazers_count : 0;
-        const updatedAt = data.updated_at ? formatDateBR(data.updated_at) : '—';
-
-        const fallbackHomepage = safeTrim(data.homepage);
-        const siteUrl = manualSiteUrl || fallbackHomepage;
-
-        metaContainer.innerHTML = `
-          <span class="${chipClass}">${language}</span>
-          <span class="${chipClass}">⭐ ${stars}</span>
-          <span class="${chipClass}">Atualizado em ${updatedAt}</span>
-        `;
-
-        createProjectLinks(card, siteUrl);
-      } catch (error) {
-        // Fallback seguro
-        metaContainer.innerHTML = `
-          <span class="${chipClass}">Metadados indisponíveis no momento</span>
-        `;
-        createProjectLinks(card, manualSiteUrl);
-      }
+      createProjectLinks(card, manualSiteUrl);
     })
   );
 }
